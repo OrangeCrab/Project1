@@ -7,18 +7,3 @@ plotly
 fastapi
 jinja2
 uvicorn
-
-
-
-- Cài đặt virtualenv
-- Tạo một virtualenv bằng lệnh
- 	virtualenv [project_name] 
-- Khởi động virtualenv bằng lệnh
- 	source [project_name]/bin/activate
-- Sau đó cài đặt các thư viện bằng lệnh pip
-...
-- Chạy server bằng lệnh
- 	uvicorn [main_file_name]:app --reload
-- Tăt server bằng Ctrl+C / Control^+C
-- Thoát khỏi virtualenv bằng lệnh
- 	deactivate
