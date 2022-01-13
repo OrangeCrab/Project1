@@ -37,7 +37,7 @@
       2.	B2: Chọn trường dữ liệu muốn dự đoán
       3.	B3: Chọn chu kỳ thời gian trong chuỗi lịch sử và số đơn vị thời gian muốn dự báo
       4.	B4: Chọn mô hình dự báo (nếu dữ liệu tại bước này hợp lệ, hiển thị ra được đồ thị trực quan cho dữ liệu dự đoán và đồ thị phân tích dữ liệu, nếu không,       đưa ra thông báo phù hợp)
-      5.	B5: Có thể thực hiện lại bước 2,3 cuối cùng là 4 để thay đổi nhu cầu dự báo dựa trên dữ liệu được tải lên ở bước 1
+      5.	B5: Có thể thực hiện lại bước 2, 3 cuối cùng là 4 để thay đổi nhu cầu dự báo dựa trên dữ liệu được tải lên ở bước 1
 
 * Sinh viên thực hiện: Vũ Hồng Sơn - 20194161
 * Email: son.vh194161@sis.hust.edu.vn
