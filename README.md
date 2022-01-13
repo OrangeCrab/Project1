@@ -9,7 +9,6 @@
   * Front-End: HTML, CSS, Js
   * Backend: Python
   * Api: FastApi
-  * Model forecasting: Facebook Prophet (https://facebook.github.io/prophet/)
 
 * Cài đặt: 
   * Các thư viện yêu cầu được trình bày trong file requirement.txt theo đúng thứ tự
@@ -26,7 +25,7 @@
     - Thoát khỏi virtualenv bằng lệnh:
       $ deactivate
       
- * Các bước sử dụng:
+* Các bước sử dụng:
    - Sau khi khởi động server, truy cập http://127.0.0.1:8000 để vào trang web
    - Dữ liệu đầu vào: 01 file định dạng CSV (Comma Separated Values) với yêu cầu:
       + Trường đầu tiên chứa dữ liệu về thời gian của chuỗi thời gian
@@ -38,6 +37,8 @@
       4.	B4: Chọn mô hình dự báo (nếu dữ liệu tại bước này hợp lệ, hiển thị ra được đồ thị trực quan cho dữ liệu dự đoán và đồ thị phân tích dữ liệu, nếu không,       đưa ra thông báo phù hợp)
       5.	B5: Có thể thực hiện lại bước 2, 3 cuối cùng là 4 để thay đổi nhu cầu dự báo dựa trên dữ liệu được tải lên ở bước 1
 
+
+* Để phát triển thêm các mô hình dự báo khác
 * Sinh viên thực hiện: Vũ Hồng Sơn - 20194161
 * Email: son.vh194161@sis.hust.edu.vn
 
