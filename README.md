@@ -3,7 +3,7 @@
 **Đề tài: Time series forecasting Web app**
 * Giáo viên hướng dẫn: Ts. Đinh Viết Sang
 * Giao diện trang web:
-![Uploading Ảnh chụp Màn hình 2022-01-13 lúc 20.45.50.png…]()
+<img width="1440" alt="Ảnh chụp Màn hình 2022-01-13 lúc 20 47 16" src="https://user-images.githubusercontent.com/68985886/149341745-e916f26f-61d5-4cc4-b985-f4804c9f8e47.png">
 
 * Project sử dụng:
   * Front-End: HTML, CSS, Js
