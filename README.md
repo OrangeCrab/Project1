@@ -9,6 +9,7 @@
   * Front-End: HTML, CSS, Js
   * Backend: Python
   * Api: FastApi
+  * Mô hình dự báo: Facebook Prophet (https://facebook.github.io/prophet/)
 
 * Cài đặt: 
   * Các thư viện yêu cầu được trình bày trong file requirement.txt theo đúng thứ tự
@@ -38,7 +39,7 @@
       5.	B5: Có thể thực hiện lại bước 2, 3 cuối cùng là 4 để thay đổi nhu cầu dự báo dựa trên dữ liệu được tải lên ở bước 1
 
 
-* Để phát triển thêm các mô hình dự báo khác
+* Phát triển thêm các mô hình dự báo khác để có thể lựa chọn tại STEP4 trên giao diện:
 * Sinh viên thực hiện: Vũ Hồng Sơn - 20194161
 * Email: son.vh194161@sis.hust.edu.vn
 
