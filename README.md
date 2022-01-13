@@ -29,7 +29,7 @@
       
  * Các bước sử dụng:
    - Sau khi khởi động server, truy cập http://127.0.0.1:8000 để vào trang web
-   -Dữ liệu đầu vào: 01 file định dạng CSV (Comma Separated Values) với yêu cầu:
+   - Dữ liệu đầu vào: 01 file định dạng CSV (Comma Separated Values) với yêu cầu:
       + Trường đầu tiên chứa dữ liệu về thời gian của chuỗi thời gian
       + (Các) trường tiếp theo chứa dữ liệu
    -	Các bước thực hiện để dự báo:
