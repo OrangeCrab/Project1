@@ -40,6 +40,10 @@
 
 
 * Phát triển thêm các mô hình dự báo khác để có thể lựa chọn tại STEP4 trên giao diện:
+  * Bổ sung tương ứng tên mô hình vào biến forecastingModel tại main.py
+  * Bổ sung tên mô hình ở phần trên và tên hàm xử lý tương ứng vào biến processFunction tại process_.py
+  * Viết hàm xử lý ở trên tại process_.py với yêu cầu được mô tả trong file đó
+  
 * Sinh viên thực hiện: Vũ Hồng Sơn - 20194161
 * Email: son.vh194161@sis.hust.edu.vn
 
