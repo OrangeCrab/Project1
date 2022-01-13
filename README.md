@@ -1,8 +1,6 @@
 # Project1
 
-**Time series forecasting Web app**
-
-* Đề tài Project 1 - Time series forecasting
+**Đề tài: Time series forecasting Web app**
 * Giáo viên hướng dẫn: Ts. Đinh Viết Sang
 * Giao diện trang web:
 <img width="1440" alt="Ảnh chụp Màn hình 2022-01-13 lúc 20 05 11" src="https://user-images.githubusercontent.com/68985886/149335455-fb376ef5-1c02-42f3-84ad-e9d7f1ec5bed.png">
