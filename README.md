@@ -2,6 +2,8 @@
 
 **Đề tài: Time series forecasting Web app**
 * Giáo viên hướng dẫn: Ts. Đinh Viết Sang
+* Sinh viên thực hiện: Vũ Hồng Sơn - 20194161
+* Email: son.vh194161@sis.hust.edu.vn
 * Giao diện trang web:
 <img width="1440" alt="Ảnh chụp Màn hình 2022-01-13 lúc 20 47 16" src="https://user-images.githubusercontent.com/68985886/149341745-e916f26f-61d5-4cc4-b985-f4804c9f8e47.png">
 
@@ -43,8 +45,6 @@
   * Bổ sung tên mô hình ở phần trên và tên hàm xử lý tương ứng vào biến processFunction tại process_.py
   * Viết hàm xử lý ở trên tại process_.py với yêu cầu được mô tả trong file đó
   
-* Sinh viên thực hiện: Vũ Hồng Sơn - 20194161
-* Email: son.vh194161@sis.hust.edu.vn
 
 
 
