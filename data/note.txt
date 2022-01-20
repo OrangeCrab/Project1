@@ -1,0 +1,2 @@
+
+Một số hình ảnh là kết quả khi sử dụng dữ liệu tại file Gold_Price.csv, dự đoán lượng dữ liệu ở cuối mẫu để tính giá trị MAE và MAPE như trong ảnh (dữ liệu là từ đầu cho đến vị trí muốn dự đoán tại file dữ liệu, có chỉnh sửa mã nguồn để nhận dữ liệu và tính được giá trị MAE, MAPE)
