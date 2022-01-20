@@ -1,4 +1,4 @@
-virtualenv (tạo môi trường ảo chạy project)
+virtualenv
 
 Để cài đặt prophet:
 trước hết cần cài đặt: pystan==2.19.1.1 
@@ -13,6 +13,10 @@ numpy
 pandas
 plotly
 
-fastapi (API để kết nối giữa backend và frontend)
-jinja2 (để sử dụng template)
-uvicorn (chạy server)
+fastapi
+jinja2 
+python-multipart
+itsdangerous
+uvicorn
+
+*(Nếu cài đặt các package trên không thành công, có thể tải file chứa đủ các package cần cho project tại đây:)
