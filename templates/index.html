@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>TSF</title>
+        <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Time Series Forecasting</h1>
+
+        <div class="upload-file">
+            <h3>STEP 1: Upload your data  ( csv file with { column[0] : date field, column[1:] : data field } ):</h3>
+            <form action="/uploadfiles/" enctype="multipart/form-data" method="post">
+                <input name="files" type="file" multiple>
+                <input type="submit" value="Upload">
+            </form>
+            <span>--- {{ warning0 }} ---</span>
+        </div>
+
+        <div class="demo_data">
+            {% autoescape off %}
+                {{demo_data}}
+            {% endautoescape %}   
+        </div>
+        
+        <div class="choose-field-data">
+            <h3>STEP 2: Choose your data field for forecast and Seasonality mode: {{ field_choosed }} {{ seasonality_mode }}</h3>
+            <form class="f_sm" action="/cfd/" enctype="multipart/form-data" method="post">
+                <div class="field">
+                    {% for id in field_data %}
+                    {% if field_data[id] == 1%}
+                    <div>
+                        <input type="radio" name="field" id="{{ field_data[id] }}" value="{{ id }}" checked="checked">
+                        <label for="{{ field_data[id] }}">{{ id }}</label>                  
+                    </div>  
+                    {% else %}
+                    <div>
+                        <input type="radio" name="field" id="{{ field_data[id] }}" value="{{ id }}">
+                        <label for="{{ field_data[id] }}">{{ id }}</label>                  
+                    </div>  
+                    {% endif %}  
+                    {% endfor %}     
+                    <br> 
+                    
+                </div>
+                <div class="seasonality_mode">
+                    <div>
+                        <input type="radio" name="smode" id="a" value="additive" checked="checked">
+                        <label for="a">additive <i>(default)</i></label>                          
+                    </div>
+                    <div>
+                        <input type="radio" name="smode" id="m" value="multiplicative">
+                        <label for="m">multiplicative <i>(if the seasonal
+                            fluctuations increase or decrease proportionally with increases
+                            and decreases in the level of the series)</i></label>                           
+                    </div>
+                </div>
+                    {% if field_data%}
+                    <input type="submit" value="Submit">       
+                    {% endif %}  
+            </form>  
+        </div>
+
+        <div class="option">
+            <h3>STEP 3: Choose your data frequency: {{ frequence }} {{prediction_size}}</h3>
+            <div class="tab-btn">
+                <button class="tablink" onclick="openPage('Day', this)" id="defaultOpen">Day</button>
+                <button class="tablink" onclick="openPage('Week', this)">Week</button>
+                <button class="tablink" onclick="openPage('Month', this)">Month</button>
+            </div>
+
+            <div class="tabcontent" id="Week">
+                <form action="/uploadoption/" enctype="multipart/form-data" method="post">
+                    <div class="radio-btn">
+                        <div>
+                            <input type="radio" id="W-MON" name="freq_" value="W-MON" checked="checked">
+                            <label for="W-MON">weekly frequency (Mondays)</label>                        
+                        </div>
+                        <div>
+                            <input type="radio" id="W-TUE" name="freq_" value="W-TUE">
+                            <label for="W-TUE">weekly frequency (Tuesdays)</label>                        
+                        </div>
+                        <div>
+                            <input type="radio" id="W-WED" name="freq_" value="W-WED">
+                            <label for="W-WED">weekly frequency (Wednesdays)</label>                        
+                        </div>
+                        <div>
+                            <input type="radio" id="W-THU" name="freq_" value="W-THU">
+                            <label for="W-THU">weekly frequency (Thursdays)</label>                        
+                        </div>
+                        <div>
+                            <input type="radio" id="W-FRI" name="freq_" value="W-FRI">
+                            <label for="W-FRI">weekly frequency (Fridays)</label>                        
+                        </div>
+                        <div>
+                            <input type="radio" id="W-SAT" name="freq_" value="W-SAT">
+                            <label for="W-SAT">weekly frequency (Saturdays)</label>                        
+                        </div>
+                        <div>
+                            <input type="radio" id="W-SUN" name="freq_" value="W-SUN">
+                            <label for="W-SUN">weekly frequency (Sundays)</label>                        
+                        </div>
+                    </div>
+                    <h4>* Choose prediction size: <span id="demo1"></span> Weeks</h4>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="10" max="52" value="52" class="slider" id="myRange1" name="prediction_size">
+                    </div>
+
+                    <script>
+                        var slider1 = document.getElementById("myRange1");
+                        var output1 = document.getElementById("demo1");
+                        output1.innerHTML = slider1.value;
+
+                        slider1.oninput = function() {
+                        output1.innerHTML = this.value;
+                        }
+                    </script>
+                    {% if demo_data and field_choosed %}
+                    <input type="submit" value="Submit"> 
+                    {% endif %}
+                </form>
+            </div>
+            <div class="tabcontent" id="Month">
+                <form action="/uploadoption/" enctype="multipart/form-data" method="post">
+                    <div class="radio-btn">
+                        <div>
+                            <input type="radio" id="MS" name="freq_" value="MS" checked="checked">
+                            <label for="MS">month start frequency</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="M" name="freq_" value="M">
+                            <label for="M">month end frequency</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="SMS" name="freq_" value="SMS">
+                            <label for="SMS">semi-month start frequency (1st and 15th)</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="SM" name="freq_" value="SM">
+                            <label for="SM">semi-month end frequency (15th and end of month)</label>
+                        </div>
+                    </div>
+
+                    <h4>* Choose prediction size: <span id="demo2"></span> Months</h4>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="6" max="24" value="24" class="slider" id="myRange2" name="prediction_size">
+                    </div>
+
+                    <script>
+                        var slider2 = document.getElementById("myRange2");
+                        var output2 = document.getElementById("demo2");
+                        output2.innerHTML = slider2.value;
+
+                        slider2.oninput = function() {
+                        output2.innerHTML = this.value;
+                        }
+                    </script>
+                    {% if demo_data and field_choosed%} 
+                    <input type="submit" value="Submit">
+                    {% endif %}                
+                </form>
+            </div>
+            <div class="tabcontent" id="Day">
+                <form action="/uploadoption/" enctype="multipart/form-data" method="post">
+                    <div class="radio-btn">
+                        <div>
+                            <input type="radio" id="D" name="freq_" value="D" checked="checked">
+                            <label for="D">calendar day frequency</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="B" name="freq_" value="B">
+                            <label for="B">business day frequency</label>
+                        </div>
+                    </div>
+                    <h4>* Choose prediction size: <span id="demo3"></span> Days</h4>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="30" max="365" value="365" class="slider" id="myRange3" name="prediction_size">
+                    </div>
+
+                    <script>
+                        var slider3 = document.getElementById("myRange3");
+                        var output3 = document.getElementById("demo3");
+                        output3.innerHTML = slider3.value;
+
+                        slider3.oninput = function() {
+                        output3.innerHTML = this.value;
+                        }
+                    </script>
+                    {% if demo_data and field_choosed %} 
+                    <input type="submit" value="Submit">
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+        
+        <div class="choose-model" >
+            <h3>STEP 4: Choose the Forecast Model: {{ warning1 }} {{model_choosed}}</h3>
+            <form action="/getmodel/" enctype="multipart/form-data" method="post">
+                {% for model in models %}
+                    {% if model == 1 %}
+                    <div>
+                        <input type="radio" name="model" id="{{ model }}", value="{{ models[model] }}" checked="checked">
+                        <label for="{{ model }}">{{ models[model] }}</label>   
+                    </div>
+                    {% else %}
+                    <div>
+                        <input type="radio" name="model" id="{{ model }}", value="{{ models[model] }}">
+                        <label for="{{ model }}">{{ models[model] }}</label>   
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                <br>
+                {% if demo_data and field_choosed and frequence %}
+                <input type="submit" value="Submit">
+                {% endif %}
+            </form>
+        </div>
+        <div class="result">  
+            <h2>FORECAST RESULT:</h2>
+
+            <div class="visualize">
+                <div class="chart">
+                    {% autoescape off %}
+                    {{ visualize_forecast }}
+                    {{ visualize_forecast_component }}
+                    {% endautoescape %}                   
+                </div>      
+                <div class="note"> 
+                    <strong>Sai phân </strong> {{note_numDiff}} lần <br><br>
+                    <strong>Giá trị adf mỗi lần: </strong><br>{% for a in note_adf %}<span> {{a[0]}} ;</span><br> {% endfor %} <br>
+                    <strong>Giá trị pvalue mỗi lần: </strong><br>{% for a in note_adf %}<span> {{a[1]}} ;</span><br> {% endfor %} <br>
+                    <strong>Giá trị MAE tính trên dữ liệu lịch sử: </strong>{{ note_err[1] }} <br><br>
+                    <strong>Giá trị MAPE tính trên dữ liệu lịch sử: </strong>{{ note_err[0] }} %<br><br>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+
+    <script>
+            // tab
+            var tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.width = 100/tablinks.length + '%';
+            }
+
+            function openPage(pageName,elmnt) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].style.backgroundColor = "";
+                    tablinks[i].style.color = "";
+                }
+                document.getElementById(pageName).style.display = "block";
+                elmnt.style.backgroundColor = "#505050";
+                elmnt.style.color = "white";
+            }
+
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+    </script>
+</html>
