@@ -19,4 +19,4 @@ python-multipart
 itsdangerous
 uvicorn
 
-*(Nếu cài đặt các package trên không thành công, có thể tải file chứa đủ các package cần cho project tại đây:)
+*(Nếu cài đặt các package trên không thành công, có thể tải file chứa đủ các package cần cho project tại đây (thư mục cài đặt gói của máy ảo virtualenv): https://drive.google.com/file/d/1hUzyA18iR9kvQzTUV4VGGqR8XVhmxD3g/view?usp=sharing)
