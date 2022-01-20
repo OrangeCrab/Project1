@@ -1,0 +1,18 @@
+virtualenv (tạo môi trường ảo chạy project)
+
+Để cài đặt prophet:
+trước hết cần cài đặt: pystan==2.19.1.1 
+Vì việc cài đặt rất hay xảy ra lỗi, có thể tham khảo tại đây: https://github.com/facebook/prophet/issues/1760
+Lỗi thường gặp: ERROR: Failed building wheel for pystan 
+           hoặc ERROR: Failed building wheel for prophet
+           (chưa có cách fix cụ thể) 
+Sau đó cài đặt các package liên quan của prophet tại https://github.com/facebook/prophet/blob/main/python/requirements.txt 
+
+sau đó mới cài đặt prophet và các thư viện bên dưới 
+numpy
+pandas
+plotly
+
+fastapi (API để kết nối giữa backend và frontend)
+jinja2 (để sử dụng template)
+uvicorn (chạy server)
