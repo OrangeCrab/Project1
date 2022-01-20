@@ -46,7 +46,7 @@ class ForecastingProcess:
         adf.append(check1)
         root = []
         while check1[1] > 0.05:                     # differencing
-            root.append(tmp_y[size-1])              # append base value for inverse
+            root.append(tmp_y[len(tmp_y)-1])              # append base value for inverse
             tmp_y = tmp_y.diff().dropna()
             numDiff = numDiff + 1
             check1 = adfuller(tmp_y)
