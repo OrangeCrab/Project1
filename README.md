@@ -22,7 +22,7 @@
     - Khởi động virtualenv bằng lệnh:
       $ source [project_name]/bin/activate
     - Sau đó cài đặt các thư viện bằng lệnh pip
-    - Khởi động server bằng lệnh:
+    - Khởi động server tại thư mục chứa bằng lệnh:
       $ uvicorn [main_file_name]:app --reload
     - Tăt server bằng Ctrl+C / Control^+C
     - Thoát khỏi virtualenv bằng lệnh:
